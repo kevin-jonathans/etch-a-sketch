@@ -1,2 +1,2 @@
 # etch-a-sketch
-Exercie for DOM manipulation by make etch-a-skecth game
+Exercie for DOM manipulation by make etch-a-sketch game
