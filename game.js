@@ -14,7 +14,13 @@ function prepareBlock(size, canvasRow) {
         block.setAttribute("class", "block");
         canvasRow.appendChild(block);
     }
+}
 
+function paintBlock(event) {
+    if (event.target.classList.contains("block") && event.buttons === 1) {
+        event.target.style.backgroundColor = "black";
+    }
 }
 
 const canvas = document.querySelector(".canvas");
+canvas.addEventListener("mouseover", paintBlock);
