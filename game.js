@@ -10,10 +10,7 @@ function prepareCanvas(size) {
 function prepareBlock(size, canvasRow) {
     for (let i = 0; i < size; i++) {
         const block = document.createElement("div");
-        const blockSize = canvas.clientWidth / size;
         block.setAttribute("class", "block");
-        block.style.width = `${blockSize}px`;
-        block.style.height = `${blockSize}px`;
 
         canvasRow.appendChild(block);
     }
