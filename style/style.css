@@ -13,7 +13,7 @@ body {
     flex-direction: column;
     min-width: 480px;
     width: 65%;
-    border: 4px solid gray;
+    border: 1px solid gray;
 }
 
 .row {
@@ -24,5 +24,4 @@ body {
 .block {
     flex: 1;
     aspect-ratio: 1;
-    border: 1px solid skyblue;
 }
