@@ -33,7 +33,8 @@ function updateColor() {
     activeColor = brushColor;
 }
 
-function colorBlock() {
+function colorBlock(event) {
+    activeButton(event);
     activeColor = brushColor;
 }
 
@@ -46,12 +47,14 @@ function getRandomColor() {
     return color;
 }
 
-function colorBlockRainbow() {
+function colorBlockRainbow(event) {
+    activeButton(event);
     rainbowColor = getRandomColor();
     activeColor = rainbowColor;
 }
 
-function eraseBlock() {
+function eraseBlock(event) {
+    activeButton(event);
     activeColor = eraserColor;
 }
 
@@ -63,6 +66,12 @@ function updateCanvasSize() {
 
 function clearCanvas() {
     prepareCanvas(canvasSize);
+}
+
+function activeButton(event) {
+    const current = document.querySelector(".active");
+    current.classList.toggle("active");
+    event.target.classList.toggle("active");
 }
 
 let brushColor = "rgb(24, 24, 24)";  // #181818

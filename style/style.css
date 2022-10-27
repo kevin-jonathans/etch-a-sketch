@@ -53,11 +53,17 @@ button {
 }
 
 button:hover {
-    background-color: #00acb593;
+    background-color: #29a8af6e;
 }
 
 button:active {
-    background-color: skyblue;
+    background-color: #1e4042;
+    color: #EEEEEE;
+}
+
+.active {
+    background-color: #1c3435;
+    color: #EEEEEE;
 }
 
 #color {
@@ -93,8 +99,6 @@ label {
     font-weight: bolder;
     color: #004649;
 }
-
-
 
 footer {
     padding: 10px;
