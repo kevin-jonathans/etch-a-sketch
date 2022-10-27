@@ -104,7 +104,7 @@ footer {
 header,
 footer {
     background-color: rgb(255, 179, 68);
-    color: black;
+    color: rgb(24, 24, 24);
 }
 
 .canvas {
@@ -114,6 +114,7 @@ footer {
     width: 500px;
     border: 1px solid gray;
     box-shadow: 2px 4px #888888;
+    user-select: none;
 }
 
 .row {
@@ -126,5 +127,5 @@ footer {
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;   
 }
