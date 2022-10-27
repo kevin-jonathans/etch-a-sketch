@@ -12,6 +12,7 @@ function prepareBlock(size, canvasRow) {
     for (let i = 0; i < size; i++) {
         const block = document.createElement("div");
         block.setAttribute("class", "block");
+        // block.textContent = "X";
         canvasRow.appendChild(block);
     }
 }
@@ -73,6 +74,7 @@ let canvasSize = 16;
 
 const canvas = document.querySelector(".canvas");
 canvas.addEventListener("mouseover", paintBlock);
+canvas.addEventListener("mousedown", paintBlock);
 
 const colorPicker = document.querySelector("#color");
 colorPicker.addEventListener("change", updateColor)
