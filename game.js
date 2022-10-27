@@ -31,7 +31,11 @@ function paintBlock(event) {
 }
 
 function updateColor() {
+    const checkActiveColor = (activeColor === brushColor) ? true : false;
     brushColor = colorPicker.value;
+    if (checkActiveColor) {
+        activeColor = brushColor;
+    }
 }
 
 function colorBlock(event) {
