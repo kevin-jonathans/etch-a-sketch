@@ -124,4 +124,7 @@ footer {
 .block {
     flex: 1;
     aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
