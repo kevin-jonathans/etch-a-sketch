@@ -30,7 +30,6 @@ function paintBlock(event) {
 
 function updateColor() {
     brushColor = colorPicker.value;
-    activeColor = brushColor;
 }
 
 function colorBlock(event) {
