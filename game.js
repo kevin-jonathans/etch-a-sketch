@@ -1,31 +1,33 @@
 function prepareCanvas(size = 16) {
     canvas.replaceChildren();  // Remove all child node
     for (let i = 0; i < size; i++) {
-        const canvasRow = document.createElement("div");
-        canvasRow.setAttribute("class", "row");
+        const canvasRow = prepareBlock(size);
         canvas.appendChild(canvasRow);
-        prepareBlock(size, canvasRow);
     }
 }
 
-function prepareBlock(size, canvasRow) {
+function prepareBlock(size) {
+    const canvasRow = document.createElement("div");
+    canvasRow.setAttribute("class", "row");
     for (let i = 0; i < size; i++) {
         const block = document.createElement("div");
         block.setAttribute("class", "block");
         // block.textContent = "X";
         canvasRow.appendChild(block);
     }
+    return canvasRow;
 }
 
 function paintBlock(event) {
+    // event.buttons === 1 is holding left click
     if (event.target.classList.contains("block") && event.buttons === 1) {
         event.target.style.backgroundColor = activeColor;
     }
     if (activeColor === rainbowColor) {
         rainbowColor = getRandomColor();
         activeColor = rainbowColor;
-    event.preventDefault()
     }
+    event.preventDefault();
 }
 
 function updateColor() {
@@ -68,6 +70,7 @@ function clearCanvas() {
 }
 
 function activeButton(event) {
+    // remove class "active" on prior button and add the class on new button
     const current = document.querySelector(".active");
     current.classList.toggle("active");
     event.target.classList.toggle("active");
@@ -76,13 +79,14 @@ function activeButton(event) {
 let brushColor = "rgb(24, 24, 24)";  // #181818
 let rainbowColor;
 const eraserColor = "whitesmoke";
+
 let activeColor = brushColor;
 
-let canvasSize = 16;
+let canvasSize = 16;  // Default size
 
 const canvas = document.querySelector(".canvas");
-canvas.addEventListener("mouseover", paintBlock);
-canvas.addEventListener("mousedown", paintBlock);
+canvas.addEventListener("mouseover", paintBlock);  // listen when mouse move
+canvas.addEventListener("mousedown", paintBlock);  // to paint first div on mouse over
 
 const colorPicker = document.querySelector("#color");
 colorPicker.addEventListener("change", updateColor)
