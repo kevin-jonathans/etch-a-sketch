@@ -18,9 +18,77 @@ function prepareBlock(size, canvasRow) {
 
 function paintBlock(event) {
     if (event.target.classList.contains("block") && event.buttons === 1) {
-        event.target.style.backgroundColor = "black";
+        event.target.style.backgroundColor = activeColor;
+    }
+    if (activeColor === rainbowColor) {
+        rainbowColor = getRandomColor();
+        activeColor = rainbowColor;
+    event.preventDefault()
     }
 }
 
+function updateColor() {
+    brushColor = colorPicker.value;
+    activeColor = brushColor;
+}
+
+function colorBlock() {
+    activeColor = brushColor;
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function colorBlockRainbow() {
+    rainbowColor = getRandomColor();
+    activeColor = rainbowColor;
+}
+
+function eraseBlock() {
+    activeColor = eraserColor;
+}
+
+function updateCanvasSize() {
+    canvasSize = changeSize.value;
+    sizeLabel.textContent = `Size : ${canvasSize} x ${canvasSize}`;
+    prepareCanvas(canvasSize);
+}
+
+function clearCanvas() {
+    prepareCanvas(canvasSize);
+}
+
+let brushColor = "rgb(24, 24, 24)";  // #181818
+let rainbowColor;
+const eraserColor = "whitesmoke";
+let activeColor = brushColor;
+
+let canvasSize = 16;
+
 const canvas = document.querySelector(".canvas");
 canvas.addEventListener("mouseover", paintBlock);
+
+const colorPicker = document.querySelector("#color");
+colorPicker.addEventListener("change", updateColor)
+
+const colorButton = document.querySelector(".color-button");
+colorButton.addEventListener("click", colorBlock);
+
+const rainbowButton = document.querySelector(".rainbow-button");
+rainbowButton.addEventListener("click", colorBlockRainbow);
+
+const eraserButton = document.querySelector(".eraser-button");
+eraserButton.addEventListener("click", eraseBlock);
+
+const changeSize = document.querySelector("#canvas-size");
+const sizeLabel = document.querySelector(".input-range label");
+changeSize.addEventListener("change", updateCanvasSize);
+
+const clearButton = document.querySelector(".clear-button");
+clearButton.addEventListener("click", clearCanvas);
