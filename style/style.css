@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: #EEEEEE;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,14 +13,12 @@ body {
 }
 
 header {
-    background-color: rgb(0, 171, 179);
     padding: 20px;
     text-align: center;
     font-size: x-large;
 }
 
 .content {
-    background-color: rgb(255, 248, 229);
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -35,27 +34,30 @@ header {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background-color: rgb(224, 93, 93, 0.2);
+    background-color: #00acb55d;
     border-radius: 5px;
     padding: 20px;
 }
 
 button {
-    background-color: rgb(224, 93, 93);
+    background-color: #00ADB5;
     width: 150px;
     padding: 10px;
-    border: 2px solid rgb(196, 68, 68);
+    border: 2px solid #00767c;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.4s;
+    font-weight: bold;
+    font-size: large;
+    color: #222831;
 }
 
 button:hover {
-    background-color: rgba(224, 93, 93, 0.781);
+    background-color: #00acb593;
 }
 
 button:active {
-    background-color: brown;
+    background-color: skyblue;
 }
 
 #color {
@@ -89,12 +91,10 @@ button:active {
 
 label {
     font-weight: bolder;
-    color: brown;
+    color: #004649;
 }
 
-#canvas-size {
-    accent-color: rgb(196, 68, 68);
-}
+
 
 footer {
     padding: 10px;
@@ -103,8 +103,8 @@ footer {
 
 header,
 footer {
-    background-color: rgb(255, 179, 68);
-    color: rgb(24, 24, 24);
+    background-color: #393E46;
+    color: #EEEEEE;
 }
 
 .canvas {
@@ -127,5 +127,5 @@ footer {
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
 }
