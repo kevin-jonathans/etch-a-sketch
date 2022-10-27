@@ -26,12 +26,15 @@ header {
     gap: 50px;
 }
 
-.option {
+.setting {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    background-color: rgb(224, 93, 93, 0.2);
+    border-radius: 5px;
+    padding: 20px;
 }
 
 button {
